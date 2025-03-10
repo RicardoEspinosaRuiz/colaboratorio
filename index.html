@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboratorio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #4b5563;
+            --accent-color: #10b981;
+            --bg-color: #f9fafb;
+            --text-color: #1f2937;
+            --code-bg: #282c34;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-color);
+        }
+        
+        .description {
+            margin-bottom: 2rem;
+        }
+        
+        .code-section {
+            margin-top: 2rem;
+        }
+        
+        .code-container {
+            background-color: var(--code-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .code-header {
+            background-color: #1e2430;
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #e5e7eb;
+        }
+        
+        .code-title {
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+        
+        .copy-button {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #e5e7eb;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .copy-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        pre {
+            margin: 0;
+            padding: 1.5rem;
+            overflow-x: auto;
+            color: #e5e7eb;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+        }
+        
+        .features-list {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: 1.5rem;
+        }
+        
+        .cta-button:hover {
+            background-color: #0da271;
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        footer a {
+            color: #d1d5db;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header p {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Colaboratorio</h1>
+        <p>Plataforma de colaboración para proyectos de código abierto</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#proyecto">El Proyecto</a></li>
+            <li><a href="#codigo">Código</a></li>
+            <li><a href="https://github.com/tuusuario/colaboratorio" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="proyecto">
+            <h2>Sobre el Proyecto</h2>
+            <div class="description">
+                <p>Colaboratorio es un espacio diseñado para fomentar la colaboración en proyectos de código abierto. Nuestra misión es crear un entorno donde desarrolladores de todos los niveles puedan compartir conocimientos, colaborar en iniciativas innovadoras y aprender juntos.</p>
+                
+                <p>Este proyecto nació de la necesidad de tener un espacio donde la comunidad pueda trabajar de forma coordinada y transparente en el desarrollo de soluciones tecnológicas que beneficien a todos.</p>
+                
+                <h3>Características principales</h3>
+                <ul class="features-list">
+                    <li>Espacio colaborativo para proyectos de código abierto</li>
+                    <li>Herramientas para gestión de código y documentación</li>
+                    <li>Comunidad activa de desarrolladores</li>
+                    <li>Tutoriales y recursos de aprendizaje</li>
+                    <li>Integración con GitHub y otras plataformas de desarrollo</li>
+                </ul>
+                
+                <p>Estamos construyendo una comunidad donde la creatividad, el respeto y la colaboración son valores fundamentales. Te invitamos a ser parte de este ecosistema y contribuir con tus ideas y habilidades.</p>
+                
+                <a href="https://github.com/tuusuario/colaboratorio" class="cta-button" target="_blank">Únete al Proyecto</a>
+            </div>
+        </section>
+        
+        <section id="codigo">
+            <h2>Nuestro Código</h2>
+            <p>A continuación se muestra un ejemplo de código que utilizamos en nuestro proyecto. Este es un componente básico que implementamos para la gestión de colaboraciones:</p>
+            
+            <div class="code-section">
+                <div class="code-container">
+                    <div class="code-header">
+                        <span class="code-title">colaboracion.js</span>
+                        <button class="copy-button" onclick="copyCode()">Copiar</button>
+                    </div>
+                    <pre><code>/**
+ * Clase Colaboracion
+ * Gestiona las colaboraciones entre usuarios en un proyecto
+ */
+class Colaboracion {
+    constructor(proyecto, usuario) {
+        this.proyecto = proyecto;
+        this.usuario = usuario;
+        this.fechaInicio = new Date();
+        this.contribuciones = [];
+        this.estado = 'activo';
+    }
+    
+    /**
+     * Añade una nueva contribución al proyecto
+     * @param {string} tipo - Tipo de contribución (código, documentación, etc.)
+     * @param {string} descripcion - Descripción de la contribución
+     * @param {string} contenido - Contenido o referencia al contenido
+     */
+    añadirContribucion(tipo, descripcion, contenido) {
+        const contribucion = {
+            id: this.generarId(),
+            tipo: tipo,
+            descripcion: descripcion,
+            contenido: contenido,
+            fecha: new Date(),
+            estado: 'pendiente'
+        };
+        
+        this.contribuciones.push(contribucion);
+        console.log(`Nueva contribución añadida: ${descripcion}`);
+        
+        return contribucion.id;
+    }
+    
+    /**
+     * Aprueba una contribución específica
+     * @param {string} contribucionId - ID de la contribución
+     */
+    aprobarContribucion(contribucionId) {
+        const contribucion = this.encontrarContribucion(contribucionId);
+        
+        if (contribucion) {
+            contribucion.estado = 'aprobado';
+            contribucion.fechaAprobacion = new Date();
+            console.log(`Contribución ${contribucionId} aprobada`);
+            return true;
+        }
+        
+        console.error(`No se encontró la contribución con ID ${contribucionId}`);
+        return false;
+    }
+    
+    /**
+     * Encuentra una contribución por su ID
+     * @param {string} id - ID de la contribución
+     * @returns {Object|null} La contribución o null si no existe
+     */
+    encontrarContribucion(id) {
+        return this.contribuciones.find(c => c.id === id) || null;
+    }
+    
+    /**
+     * Genera un ID único para las contribuciones
+     * @returns {string} ID generado
+     */
+    generarId() {
+        return `contrib_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    }
+    
+    /**
+     * Obtiene todas las contribuciones de un tipo específico
+     * @param {string} tipo - Tipo de contribuciones a filtrar
+     * @returns {Array} Contribuciones filtradas
+     */
+    obtenerContribucionesPorTipo(tipo) {
+        return this.contribuciones.filter(c => c.tipo === tipo);
+    }
+    
+    /**
+     * Finaliza la colaboración
+     */
+    finalizar() {
+        this.estado = 'finalizado';
+        this.fechaFin = new Date();
+        console.log(`Colaboración finalizada en proyecto ${this.proyecto}`);
+    }
+}
+
+// Ejemplo de uso
+const colaboracion = new Colaboracion('Colaboratorio', 'usuario123');
+const idContribucion = colaboracion.añadirContribucion(
+    'código', 
+    'Implementación del sistema de notificaciones', 
+    'https://github.com/usuario123/colaboratorio/pull/42'
+);
+
+colaboracion.aprobarContribucion(idContribucion);</code></pre>
+                </div>
+            </div>
+            
+            <p class="description" style="margin-top: 1.5rem;">
+                Este código ejemplifica cómo gestionamos las colaboraciones en nuestro proyecto. La clase <code>Colaboracion</code> permite a los usuarios contribuir con código, documentación u otros recursos, y facilita el proceso de revisión y aprobación de dichas contribuciones.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Colaboratorio - Un proyecto de código abierto</p>
+        <p><a href="https://github.com/tuusuario/colaboratorio" target="_blank">GitHub</a> | <a href="#" target="_blank">Documentación</a> | <a href="#" target="_blank">Contribuir</a></p>
+    </footer>
+    
+    <script>
+        function copyCode() {
+            const codeElement = document.querySelector('pre code');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            const copyButton = document.querySelector('.copy-button');
+            const originalText = copyButton.textContent;
+            copyButton.textContent = '¡Copiado!';
+            
+            setTimeout(() => {
+                copyButton.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
